@@ -6,8 +6,12 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script>
-    function TagThisController( $scope ) {
-      $scope.tag = "tag-this";
+    angular.module( "TagThisApp", [], function( $locationProvider ) {
+      $locationProvider.html5Mode( true );
+    } );
+    function TagThisController( $scope, $location ) {
+      console.log($location.search());
+      $scope.tag = $location.search()[ "tag" ] || "tag-this";
     }
   </script>
   <style>
@@ -149,18 +153,18 @@
     }
   </style>
 </head>
-<body ng-app ng-controller="TagThisController">
+<body ng-app="TagThisApp" ng-controller="TagThisController">
 <div class="container">
   <form>
     <div class="from-group">
-      <input class="form-control text-center" type="text" ng-model="tag">
+      <input class="form-control text-center" type="text" ng-model="tag" placeholder="Enter some text here">
     </div>
   </form>
 </div>
-<div class="container">
+<div class="container" ng-hide="!tag">
   <h3 class="text-center">Chat</h3>
 
-  <p class="text-center" ng-hide="!tag">
+  <p class="text-center">
     <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
     <a class="tag chat-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
 
@@ -176,7 +180,7 @@
 
   <h3 class="text-center">Site</h3>
 
-  <p class="text-center" ng-hide="!tag">
+  <p class="text-center">
     <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
     <a class="tag site-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
 
