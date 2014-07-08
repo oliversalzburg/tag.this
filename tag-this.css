@@ -17,6 +17,13 @@ p {
   border-radius : 3px;
 }
 
+.oauth-icon {
+  position : absolute;
+  right    : 0;
+  bottom   : 0;
+  padding  : 1em;
+}
+
 .tag-container {
   white-space : nowrap;
 }

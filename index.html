@@ -49,5 +49,11 @@
     <site-tag tag="tag" ng-model="sites.meta.superuser"></site-tag>
   </p>
 </div>
+<div class="oauth-icon">
+  <span class="text-muted" ng-hide="!accessToken">authenticated with SE API</span>
+  <a href="https://stackexchange.com/oauth/dialog?client_id=3247&redirect_uri=http://wetagg.in" title="Authenticate with Stack Exchange API">
+    <img src="//cdn.sstatic.net/stackexchange/img/favicon.ico">
+  </a>
+</div>
 </body>
 </html>

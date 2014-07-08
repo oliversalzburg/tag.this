@@ -1,7 +1,18 @@
 var appModule = angular.module( "TagThisApp", [], function( $locationProvider ) {
   $locationProvider.html5Mode( true );
 } );
+
+var stackExchangeAccessToken = "";
+
 function TagThisController( $scope, $location, $http ) {
+  // Check if we got an access token through OAuth with the SE API.
+  var accessToken = $location.path().match( /\/access_token=(.+)&expires=\d+/ );
+  if( accessToken ) {
+    $scope.accessToken = stackExchangeAccessToken = accessToken[ 1 ];
+    console.log( "Got access token " + stackExchangeAccessToken );
+    $location.path("");
+  }
+
   $scope.tag = $location.search()[ "tag" ] || $location.path().substr( 1 ) || "tag-this";
 
   $scope.sites = {
@@ -71,7 +82,11 @@ appModule.factory( "tags", ["$q", "$timeout", "$http", function( $q, $timeout, $
     // Construct a retriever that will run after a certain delay (to avoid sending tons of requests while typing).
     var retrieverPromise = $timeout( function() {
       console.log( "Retrieving " + tag + " for " + site );
-      $http.get( "http://api.stackexchange.com/2.2/tags/" + encodeURIComponent( tag ) + "/info?site=" + site )
+      var requestUri = "https://api.stackexchange.com/2.2/tags/" + encodeURIComponent( tag ) + "/info?site=" + site;
+      if( stackExchangeAccessToken ) {
+        requestUri += "&key=1dkkO89fIM9mRiK55gzqQQ((&access_token=" + stackExchangeAccessToken;
+      }
+      $http.get( requestUri )
         .then( function( response ) {
                  if( response.status != 200 ) {
                    console.log( response );
