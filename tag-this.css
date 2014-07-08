@@ -1,0 +1,175 @@
+body > .container:first-child {
+  margin-top : 6em;
+}
+
+.container {
+  margin-top : 3em;
+}
+
+.container h3 {
+  margin : 2em 0 1em;
+}
+
+p {
+  line-height   : 3em;
+  padding       : 4em;
+  border        : 1px solid #eee;
+  border-radius : 3px;
+}
+
+.tag-container {
+  white-space : nowrap;
+}
+
+.favicon {
+  margin      : 0 5px;
+  padding-top : 1px;
+}
+
+/* Actual tag styles start here */
+.tag {
+  margin          : 0 1em;
+  word-break      : keep-all;
+  white-space     : nowrap;
+  cursor          : pointer;
+  text-decoration : none !important;
+}
+
+.chat-tag {
+  color            : #3E6D8E;
+  background-color : #E0EAF1;
+  font-size        : .9em;
+  padding          : 3px 4px;
+  border-width     : 0 1px 1px 0;
+}
+
+.chat-tag:hover {
+  border-width : 1px 0px 0px 1px;
+}
+
+.chat-tag.stackoverflow {
+  color            : #3E6D8E;
+  background-color : #E0EAF1;
+  border-color     : #3E6D8E;
+  border-style     : solid;
+}
+
+.chat-tag.stackoverflow.meta {
+  color            : #566E76;
+  background-color : #F7FDFF;
+  border-color     : #566E76;
+  border-style     : solid;
+}
+
+.chat-tag.serverfault {
+  background-color : #F3F1D9;
+  color            : #444444;
+  border-color     : #444444;
+  border-style     : solid;
+}
+
+.chat-tag.superuser {
+  color            : #1087A4;
+  background-color : #FFFFFF;
+  border-color     : #1087A4;
+  border-style     : solid;
+}
+
+.chat-tag.serverfault.meta,
+.chat-tag.superuser.meta {
+  color            : #000;
+  background-color : #FFF;
+  border-color     : #000;
+  border-style     : solid;
+}
+
+.site-tag {
+  font-size   : 90%;
+  line-height : 1.4;
+  display     : inline-block;
+}
+
+/* Stack Overflow */
+.site-tag.stackoverflow {
+  color            : #3e6d8e;
+  background-color : #e0eaf1;
+  border-bottom    : 1px solid #b3cee1;
+  border-right     : 1px solid #b3cee1;
+  padding          : 3px 4px 3px 4px;
+}
+
+.site-tag.stackoverflow:hover {
+  background-color : #c4dae9;
+  border-bottom    : 1px solid #c4dae9;
+  border-right     : 1px solid #c4dae9;
+}
+
+.site-tag.stackoverflow.meta {
+  color            : #6f6f6f;
+  background-color : #e7e7e7;
+  border-bottom    : 1px solid #d5d5d5;
+  border-right     : 1px solid #d5d5d5;
+  padding          : 3px 4px 3px 4px;
+}
+
+.site-tag.stackoverflow.meta:hover {
+  background-color : #d5d5d5;
+  border-bottom    : 1px solid #d5d5d5;
+  border-right     : 1px solid #d5d5d5;
+}
+
+/* Server Fault */
+.site-tag.serverfault {
+  color            : #444;
+  background-color : #f3f1d9;
+  border           : 1px solid #c5b849;
+  padding          : 3px 4px 3px 4px;
+}
+
+.site-tag.serverfault:hover {
+  color            : #f3f1d9;
+  background-color : #444;
+  border           : 1px solid #444;
+}
+
+.site-tag.serverfault.meta {
+  color            : #6f6f6f;
+  background-color : #e7e7e7;
+  border           : 1px solid #d0d0d0;
+  padding          : 3px 4px 3px 4px;
+}
+
+.site-tag.serverfault.meta:hover {
+  color            : #e7e7e7;
+  background-color : #626262;
+  border-bottom    : 1px solid #565656;
+  border-right     : 1px solid #565656;
+}
+
+/* Super User */
+.site-tag.superuser {
+  color            : #1087a4;
+  background-color : #fff;
+  border           : 2px solid #14a7c6;
+  padding          : 3px 5px 3px 5px;
+  border-radius    : 7px;
+}
+
+.site-tag.superuser:hover {
+  color            : #f3f1d9;
+  background-color : #14a7c6;
+  border           : 2px solid #14a7c6;
+}
+
+.site-tag.superuser.meta {
+  color         : #6f6f6f;
+  border        : 2px solid #8c8c8c;
+  padding       : 3px 4px 3px 4px;
+  border-radius : 7px;
+}
+
+.site-tag.superuser.meta:hover {
+  color            : #e7e7e7;
+  background-color : #626262;
+  border           : 2px solid #8c8c8c;
+}
