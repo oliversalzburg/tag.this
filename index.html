@@ -11,6 +11,13 @@
     } );
     function TagThisController( $scope, $location ) {
       $scope.tag = $location.search()[ "tag" ] || $location.path().substr( 1 ) || "tag-this";
+
+      /**
+       * Update the path in the URL with the current model.
+       */
+      $scope.updatePath = function() {
+        $location.path( $scope.tag );
+      }
     }
   </script>
   <style>
@@ -195,7 +202,7 @@
 <div class="container">
   <form>
     <div class="from-group">
-      <input class="form-control text-center" type="text" ng-model="tag" placeholder="Enter some text here">
+      <input class="form-control text-center" type="text" ng-model="tag" placeholder="Enter some text here" ng-change="updatePath()">
     </div>
   </form>
 </div>
