@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Tag This!</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <style>
+    .container {
+      margin-top : 10%;
+    }
+
+    .chat-tag {
+      font-size        : .9em;
+      padding          : 3px 4px;
+      border-width     : 0 1px 1px 0;
+
+      background-color : #FFFFFF;
+      color            : #1087A4;
+      border-color     : #1087A4;
+      border-style     : solid;
+    }
+
+    .site-tag {
+      color            : #1087a4;
+      background-color : #fff;
+      border           : 2px solid #14a7c6;
+      padding          : 3px 5px 3px 5px;
+      border-radius    : 7px;
+      margin           : 2px 2px 2px 0;
+      text-decoration  : none;
+      font-size        : 90%;
+      line-height      : 1.4;
+      white-space      : nowrap;
+      display          : inline-block;
+    }
+  </style>
+</head>
+<body ng-app>
+<div class="container">
+  <form>
+    <div class="from-group">
+      <input class="form-control" type="text" ng-model="tag">
+    </div>
+  </form>
+</div>
+<div class="container">
+  <p class="text-center" ng-hide="!tag"><span class="chat-tag">{{tag}}</span></p>
+
+  <p class="text-center" ng-hide="!tag"><span class="site-tag">{{tag}}</span></p>
+</div>
+</body>
+</html>
