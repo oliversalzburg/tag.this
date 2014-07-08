@@ -125,7 +125,7 @@ appModule.directive( "chatTag", ["tags", function( tags ) {
   };
   return chatTag;
 }] );
-appModule.directive( "siteTag", ["$http", function( $http ) {
+appModule.directive( "siteTag", ["tags", function( tags ) {
   var siteTag = angular.copy( abstractTag );
   siteTag.template = '<span class="tag-container" title="{{count}} questions with this tag">' +
                      '  <img class="favicon" src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
