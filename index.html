@@ -34,44 +34,50 @@
       padding-top : 1px;
     }
 
+    /* Actual tag styles start here */
     .tag {
       margin      : 0 1em;
       word-break  : keep-all;
       white-space : nowrap;
+      cursor      : pointer;
     }
 
     .chat-tag {
-      background-color : #E0EAF1;
       color            : #3E6D8E;
+      background-color : #E0EAF1;
       font-size        : .9em;
       padding          : 3px 4px;
       border-width     : 0 1px 1px 0;
     }
 
+    .chat-tag:hover {
+      border-width : 1px 0px 0px 1px;
+    }
+
     .chat-tag-so {
-      background-color : #E0EAF1;
       color            : #3E6D8E;
+      background-color : #E0EAF1;
       border-color     : #3E6D8E;
       border-style     : solid;
     }
 
-    .chat-tag-so-meta {
-      background-color : #F7FDFF;
+    .chat-tag-so.meta {
       color            : #566E76;
+      background-color : #F7FDFF;
       border-color     : #566E76;
       border-style     : solid;
     }
 
     .chat-tag-su {
-      background-color : #FFFFFF;
       color            : #1087A4;
+      background-color : #FFFFFF;
       border-color     : #1087A4;
       border-style     : solid;
     }
 
-    .chat-tag-su-meta {
-      background-color : #FFF;
+    .chat-tag-su.meta {
       color            : #000;
+      background-color : #FFF;
       border-color     : #000;
       border-style     : solid;
     }
@@ -91,12 +97,26 @@
       padding          : 3px 4px 3px 4px;
     }
 
-    .site-tag-so-meta {
+    .site-tag-so:hover {
+      background-color : #c4dae9;
+      border-bottom    : 1px solid #c4dae9;
+      border-right     : 1px solid #c4dae9;
+      text-decoration  : none;
+    }
+
+    .site-tag-so.meta {
       color            : #6f6f6f;
       background-color : #e7e7e7;
       border-bottom    : 1px solid #d5d5d5;
       border-right     : 1px solid #d5d5d5;
       padding          : 3px 4px 3px 4px;
+    }
+
+    .site-tag-so.meta:hover {
+      background-color : #d5d5d5;
+      border-bottom    : 1px solid #d5d5d5;
+      border-right     : 1px solid #d5d5d5;
+      text-decoration  : none;
     }
 
     .site-tag-su {
@@ -107,11 +127,25 @@
       border-radius    : 7px;
     }
 
-    .site-tag-su-meta {
+    .site-tag-su:hover {
+      color            : #f3f1d9;
+      background-color : #14a7c6;
+      border           : 2px solid #14a7c6;
+      text-decoration  : none;
+    }
+
+    .site-tag-su.meta {
       color         : #6f6f6f;
       border        : 2px solid #8c8c8c;
       padding       : 3px 4px 3px 4px;
       border-radius : 7px;
+    }
+
+    .site-tag-su.meta:hover {
+      color            : #e7e7e7;
+      background-color : #626262;
+      border           : 2px solid #8c8c8c;
+      text-decoration  : none;
     }
   </style>
 </head>
@@ -131,29 +165,29 @@
     <span class="tag chat-tag chat-tag-so">{{tag}}</span>
 
     <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
-    <span class="tag chat-tag chat-tag-so-meta">{{tag}}</span>
+    <span class="tag chat-tag chat-tag-so meta">{{tag}}</span>
 
     <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
     <span class="tag chat-tag chat-tag-su">{{tag}}</span>
 
     <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
-    <span class="tag chat-tag chat-tag-su-meta">{{tag}}</span>
+    <span class="tag chat-tag chat-tag-su meta">{{tag}}</span>
   </p>
 
   <h3 class="text-center">Site</h3>
 
   <p class="text-center" ng-hide="!tag">
     <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
-    <span class="tag site-tag site-tag site-tag-so">{{tag}}</span>
+    <span class="tag site-tag site-tag-so">{{tag}}</span>
 
     <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
-    <span class="tag site-tag site-tag site-tag-so-meta">{{tag}}</span>
+    <span class="tag site-tag site-tag-so meta">{{tag}}</span>
 
     <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
     <span class="tag site-tag site-tag-su">{{tag}}</span>
 
     <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
-    <span class="tag site-tag site-tag-su-meta">{{tag}}</span>
+    <span class="tag site-tag site-tag-su meta">{{tag}}</span>
   </p>
 </div>
 </body>
