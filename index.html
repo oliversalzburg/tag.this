@@ -34,7 +34,7 @@
     }
 
     .tag-container {
-      white-space: nowrap;
+      white-space : nowrap;
     }
 
     .favicon {
@@ -44,10 +44,11 @@
 
     /* Actual tag styles start here */
     .tag {
-      margin      : 0 1em;
-      word-break  : keep-all;
-      white-space : nowrap;
-      cursor      : pointer;
+      margin          : 0 1em;
+      word-break      : keep-all;
+      white-space     : nowrap;
+      cursor          : pointer;
+      text-decoration : none !important;
     }
 
     .chat-tag {
@@ -76,6 +77,13 @@
       border-style     : solid;
     }
 
+    .chat-tag.serverfault {
+      background-color : #F3F1D9;
+      color            : #444444;
+      border-color     : #444444;
+      border-style     : solid;
+    }
+
     .chat-tag.superuser {
       color            : #1087A4;
       background-color : #FFFFFF;
@@ -83,6 +91,7 @@
       border-style     : solid;
     }
 
+    .chat-tag.serverfault.meta,
     .chat-tag.superuser.meta {
       color            : #000;
       background-color : #FFF;
@@ -91,12 +100,12 @@
     }
 
     .site-tag {
-      text-decoration : none;
-      font-size       : 90%;
-      line-height     : 1.4;
-      display         : inline-block;
+      font-size   : 90%;
+      line-height : 1.4;
+      display     : inline-block;
     }
 
+    /* Stack Overflow */
     .site-tag.stackoverflow {
       color            : #3e6d8e;
       background-color : #e0eaf1;
@@ -109,7 +118,6 @@
       background-color : #c4dae9;
       border-bottom    : 1px solid #c4dae9;
       border-right     : 1px solid #c4dae9;
-      text-decoration  : none;
     }
 
     .site-tag.stackoverflow.meta {
@@ -124,9 +132,37 @@
       background-color : #d5d5d5;
       border-bottom    : 1px solid #d5d5d5;
       border-right     : 1px solid #d5d5d5;
-      text-decoration  : none;
     }
 
+    /* Server Fault */
+    .site-tag.serverfault {
+      color            : #444;
+      background-color : #f3f1d9;
+      border           : 1px solid #c5b849;
+      padding          : 3px 4px 3px 4px;
+    }
+
+    .site-tag.serverfault:hover {
+      color            : #f3f1d9;
+      background-color : #444;
+      border           : 1px solid #444;
+    }
+
+    .site-tag.serverfault.meta {
+      color            : #6f6f6f;
+      background-color : #e7e7e7;
+      border           : 1px solid #d0d0d0;
+      padding          : 3px 4px 3px 4px;
+    }
+
+    .site-tag.serverfault.meta:hover {
+      color            : #e7e7e7;
+      background-color : #626262;
+      border-bottom    : 1px solid #565656;
+      border-right     : 1px solid #565656;
+    }
+
+    /* Super User */
     .site-tag.superuser {
       color            : #1087a4;
       background-color : #fff;
@@ -139,7 +175,6 @@
       color            : #f3f1d9;
       background-color : #14a7c6;
       border           : 2px solid #14a7c6;
-      text-decoration  : none;
     }
 
     .site-tag.superuser.meta {
@@ -153,7 +188,6 @@
       color            : #e7e7e7;
       background-color : #626262;
       border           : 2px solid #8c8c8c;
-      text-decoration  : none;
     }
   </style>
 </head>
@@ -169,6 +203,7 @@
   <h3 class="text-center">Chat</h3>
 
   <p class="text-center">
+    <!-- Stack Overflow -->
     <span class="tag-container">
       <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
       <a class="tag chat-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
@@ -179,6 +214,18 @@
       <a class="tag chat-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
     </span>
 
+    <!-- Server Fault -->
+    <span class="tag-container">
+      <img class="favicon" src="http://serverfault.com/favicon.ico" width="16">
+      <a class="tag chat-tag serverfault" href="http://serverfault.com/tags/{{tag}}">{{tag}}</a>
+    </span>
+
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.serverfault.com/favicon.ico" width="16">
+      <a class="tag chat-tag serverfault meta" href="http://meta.serverfault.com/tags/{{tag}}">{{tag}}</a>
+    </span>
+
+    <!-- Super User -->
     <span class="tag-container">
       <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
       <a class="tag chat-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
@@ -193,6 +240,7 @@
   <h3 class="text-center">Site</h3>
 
   <p class="text-center">
+    <!-- Stack Overflow -->
     <span class="tag-container">
       <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
       <a class="tag site-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
@@ -203,6 +251,18 @@
       <a class="tag site-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
     </span>
 
+    <!-- Server Fault -->
+    <span class="tag-container">
+      <img class="favicon" src="http://serverfault.com/favicon.ico" width="16">
+      <a class="tag site-tag serverfault" href="http://serverfault.com/tags/{{tag}}">{{tag}}</a>
+    </span>
+
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.serverfault.com/favicon.ico" width="16">
+      <a class="tag site-tag serverfault meta" href="http://meta.serverfault.com/tags/{{tag}}">{{tag}}</a>
+    </span>
+
+    <!-- Super User -->
     <span class="tag-container">
       <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
       <a class="tag site-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
