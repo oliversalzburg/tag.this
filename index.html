@@ -10,8 +10,7 @@
       $locationProvider.html5Mode( true );
     } );
     function TagThisController( $scope, $location ) {
-      console.log($location.search());
-      $scope.tag = $location.search()[ "tag" ] || "tag-this";
+      $scope.tag = $location.search()[ "tag" ] || $location.path().substr(1) || "tag-this";
     }
   </script>
   <style>
