@@ -125,7 +125,7 @@ var abstractTag = {
 appModule.directive( "chatTag", ["tags", function( tags ) {
   var chatTag = angular.copy( abstractTag );
   chatTag.template = '<span class="tag-container" title="{{count}} questions with this tag">' +
-                     '  <img class="favicon" src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
+                     '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
                      '  <a class="tag chat-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
                      '</span>';
 
@@ -143,7 +143,7 @@ appModule.directive( "chatTag", ["tags", function( tags ) {
 appModule.directive( "siteTag", ["tags", function( tags ) {
   var siteTag = angular.copy( abstractTag );
   siteTag.template = '<span class="tag-container" title="{{count}} questions with this tag">' +
-                     '  <img class="favicon" src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
+                     '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
                      '  <a class="tag site-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
                      '</span>';
 
