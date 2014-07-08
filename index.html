@@ -11,17 +11,33 @@
     }
   </script>
   <style>
+    body > .container:first-child {
+      margin-top : 6em;
+    }
+
     .container {
-      margin-top : 10%;
+      margin-top : 3em;
+    }
+
+    .container h3 {
+      margin : 2em 0 1em;
+    }
+
+    p {
+      padding       : 4em;
+      border        : 1px solid #eee;
+      border-radius : 3px;
     }
 
     .favicon {
-      margin-right : 5px;
-      padding-top  : 1px;
+      margin      : 0 5px;
+      padding-top : 1px;
     }
 
     .tag {
-
+      margin      : 0 1em;
+      word-break  : keep-all;
+      white-space : nowrap;
     }
 
     .chat-tag {
@@ -60,32 +76,27 @@
       border-style     : solid;
     }
 
+    .site-tag {
+      text-decoration : none;
+      font-size       : 90%;
+      line-height     : 1.4;
+      display         : inline-block;
+    }
+
     .site-tag-so {
-      color: #3e6d8e;
-      background-color: #e0eaf1;
-      border-bottom: 1px solid #b3cee1;
-      border-right: 1px solid #b3cee1;
-      padding: 3px 4px 3px 4px;
-      margin: 2px 2px 2px 0;
-      text-decoration: none;
-      font-size: 90%;
-      line-height: 1.4;
-      white-space: nowrap;
-      display: inline-block;
+      color            : #3e6d8e;
+      background-color : #e0eaf1;
+      border-bottom    : 1px solid #b3cee1;
+      border-right     : 1px solid #b3cee1;
+      padding          : 3px 4px 3px 4px;
     }
 
     .site-tag-so-meta {
-      color: #6f6f6f;
-      background-color: #e7e7e7;
-      border-bottom: 1px solid #d5d5d5;
-      border-right: 1px solid #d5d5d5;
-      padding: 3px 4px 3px 4px;
-      margin: 2px 2px 2px 0;
-      text-decoration: none;
-      font-size: 90%;
-      line-height: 1.4;
-      white-space: nowrap;
-      display: inline-block;
+      color            : #6f6f6f;
+      background-color : #e7e7e7;
+      border-bottom    : 1px solid #d5d5d5;
+      border-right     : 1px solid #d5d5d5;
+      padding          : 3px 4px 3px 4px;
     }
 
     .site-tag-su {
@@ -94,26 +105,13 @@
       border           : 2px solid #14a7c6;
       padding          : 3px 5px 3px 5px;
       border-radius    : 7px;
-      margin           : 2px 2px 2px 0;
-      text-decoration  : none;
-      font-size        : 90%;
-      line-height      : 1.4;
-      white-space      : nowrap;
-      display          : inline-block;
     }
 
     .site-tag-su-meta {
-      color: #6f6f6f;
-      border-bottom: 1px solid #626262;
-      border: 2px solid #8c8c8c;
-      padding: 3px 4px 3px 4px;
-      border-radius: 7px;
-      margin: 2px 2px 2px 0;
-      text-decoration: none;
-      font-size: 90%;
-      line-height: 1.4;
-      white-space: nowrap;
-      display: inline-block;
+      color         : #6f6f6f;
+      border        : 2px solid #8c8c8c;
+      padding       : 3px 4px 3px 4px;
+      border-radius : 7px;
     }
   </style>
 </head>
@@ -136,7 +134,7 @@
     <span class="tag chat-tag chat-tag-so-meta">{{tag}}</span>
 
     <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
-    <span class="tag chat-tag chat-su-tag">{{tag}}</span>
+    <span class="tag chat-tag chat-tag-su">{{tag}}</span>
 
     <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
     <span class="tag chat-tag chat-tag-su-meta">{{tag}}</span>
@@ -146,16 +144,16 @@
 
   <p class="text-center" ng-hide="!tag">
     <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
-    <span class="tag site-tag site-tag-so">{{tag}}</span>
+    <span class="tag site-tag site-tag site-tag-so">{{tag}}</span>
 
     <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
-    <span class="tag site-tag site-tag-so-meta">{{tag}}</span>
+    <span class="tag site-tag site-tag site-tag-so-meta">{{tag}}</span>
 
     <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
-    <span class="site-tag-su">{{tag}}</span>
+    <span class="tag site-tag site-tag-su">{{tag}}</span>
 
     <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
-    <span class="site-tag-su-meta">{{tag}}</span>
+    <span class="tag site-tag site-tag-su-meta">{{tag}}</span>
   </p>
 </div>
 </body>
