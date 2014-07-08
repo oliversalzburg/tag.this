@@ -10,7 +10,7 @@
       $locationProvider.html5Mode( true );
     } );
     function TagThisController( $scope, $location ) {
-      $scope.tag = $location.search()[ "tag" ] || $location.path().substr(1) || "tag-this";
+      $scope.tag = $location.search()[ "tag" ] || $location.path().substr( 1 ) || "tag-this";
     }
   </script>
   <style>
@@ -27,9 +27,14 @@
     }
 
     p {
+      line-height   : 3em;
       padding       : 4em;
       border        : 1px solid #eee;
       border-radius : 3px;
+    }
+
+    .tag-container {
+      white-space: nowrap;
     }
 
     .favicon {
@@ -164,33 +169,49 @@
   <h3 class="text-center">Chat</h3>
 
   <p class="text-center">
-    <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
-    <a class="tag chat-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
+      <a class="tag chat-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
-    <a class="tag chat-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
+      <a class="tag chat-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
-    <a class="tag chat-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
+      <a class="tag chat-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
-    <a class="tag chat-tag superuser meta" href="http://meta.superuser.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
+      <a class="tag chat-tag superuser meta" href="http://meta.superuser.com/tags/{{tag}}">{{tag}}</a>
+    </span>
   </p>
 
   <h3 class="text-center">Site</h3>
 
   <p class="text-center">
-    <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
-    <a class="tag site-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://stackoverflow.com/favicon.ico" width="16">
+      <a class="tag site-tag stackoverflow" href="http://stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
-    <a class="tag site-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.stackoverflow.com/favicon.ico" width="16">
+      <a class="tag site-tag stackoverflow meta" href="http://meta.stackoverflow.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
-    <a class="tag site-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://superuser.com/favicon.ico" width="16">
+      <a class="tag site-tag superuser" href="http://superuser.com/tags/{{tag}}">{{tag}}</a>
+    </span>
 
-    <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
-    <a class="tag site-tag superuser meta" href="http://meta.superuser.com/tags/{{tag}}">{{tag}}</a>
+    <span class="tag-container">
+      <img class="favicon" src="http://meta.superuser.com/favicon.ico" width="16">
+      <a class="tag site-tag superuser meta" href="http://meta.superuser.com/tags/{{tag}}">{{tag}}</a>
+    </span>
   </p>
 </div>
 </body>
