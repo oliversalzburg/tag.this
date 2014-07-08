@@ -17,22 +17,6 @@
   </form>
 </div>
 <div class="container" ng-hide="!tag">
-  <h3 class="text-center">Chat</h3>
-
-  <p class="text-center">
-    <!-- Stack Overflow -->
-    <chat-tag tag="tag" ng-model="sites.stackoverflow"></chat-tag>
-    <chat-tag tag="tag" ng-model="sites.meta.stackoverflow"></chat-tag>
-
-    <!-- Server Fault -->
-    <chat-tag tag="tag" ng-model="sites.serverfault"></chat-tag>
-    <chat-tag tag="tag" ng-model="sites.meta.serverfault"></chat-tag>
-
-    <!-- Super User -->
-    <chat-tag tag="tag" ng-model="sites.superuser"></chat-tag>
-    <chat-tag tag="tag" ng-model="sites.meta.superuser"></chat-tag>
-  </p>
-
   <h3 class="text-center">Site</h3>
 
   <p class="text-center">
@@ -47,6 +31,22 @@
     <!-- Super User -->
     <site-tag tag="tag" ng-model="sites.superuser"></site-tag>
     <site-tag tag="tag" ng-model="sites.meta.superuser"></site-tag>
+  </p>
+
+  <h3 class="text-center">Chat</h3>
+
+  <p class="text-center">
+    <!-- Stack Overflow -->
+    <chat-tag tag="tag" ng-model="sites.stackoverflow"></chat-tag>
+    <chat-tag tag="tag" ng-model="sites.meta.stackoverflow"></chat-tag>
+
+    <!-- Server Fault -->
+    <chat-tag tag="tag" ng-model="sites.serverfault"></chat-tag>
+    <chat-tag tag="tag" ng-model="sites.meta.serverfault"></chat-tag>
+
+    <!-- Super User -->
+    <chat-tag tag="tag" ng-model="sites.superuser"></chat-tag>
+    <chat-tag tag="tag" ng-model="sites.meta.superuser"></chat-tag>
   </p>
 </div>
 <div class="oauth-icon">
