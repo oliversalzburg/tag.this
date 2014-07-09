@@ -17,11 +17,15 @@ p {
   border-radius : 3px;
 }
 
-.oauth-icon {
+.site-icons {
   position : absolute;
   right    : 0;
   bottom   : 0;
   padding  : 1em;
+}
+
+.site-icons a:hover {
+  text-decoration : none;
 }
 
 .tag-container {
