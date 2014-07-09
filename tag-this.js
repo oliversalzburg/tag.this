@@ -10,7 +10,7 @@ function TagThisController( $scope, $location, $http ) {
   if( accessToken ) {
     $scope.accessToken = stackExchangeAccessToken = accessToken[ 1 ];
     console.log( "Got access token " + stackExchangeAccessToken );
-    $location.path("");
+    $location.path( "" );
   }
 
   $scope.tag = $location.search()[ "tag" ] || $location.path().substr( 1 ) || "tag-this";
@@ -124,17 +124,19 @@ var abstractTag = {
 };
 appModule.directive( "chatTag", ["tags", function( tags ) {
   var chatTag = angular.copy( abstractTag );
-  chatTag.template = '<span class="tag-container" title="{{count}} questions with this tag">' +
+  chatTag.template = '<span class="tag-container" title="{{count}}">' +
                      '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
                      '  <a class="tag chat-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
                      '</span>';
 
   chatTag.link = function postLink( scope, element, attributes ) {
     scope.$watch( "tag", function( newTag ) {
+      scope.count = "invalid tag";
       if( !newTag ) return;
+      scope.count = "loading question count…";
       tags.getCount( scope.ngModel.site, newTag )
         .then( function( count ) {
-                 scope.count = count;
+                 scope.count = count + " questions with this tag";
                } );
     } )
   };
@@ -142,17 +144,19 @@ appModule.directive( "chatTag", ["tags", function( tags ) {
 }] );
 appModule.directive( "siteTag", ["tags", function( tags ) {
   var siteTag = angular.copy( abstractTag );
-  siteTag.template = '<span class="tag-container" title="{{count}} questions with this tag">' +
+  siteTag.template = '<span class="tag-container" title="{{count}}">' +
                      '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
                      '  <a class="tag site-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
                      '</span>';
 
   siteTag.link = function postLink( scope, element, attributes ) {
     scope.$watch( "tag", function( newTag ) {
+      scope.count = "invalid tag";
       if( !newTag ) return;
+      scope.count = "loading question count…";
       tags.getCount( scope.ngModel.site, newTag )
         .then( function( count ) {
-                 scope.count = count;
+                 scope.count = count + " questions with this tag";
                } );
     } )
   };
