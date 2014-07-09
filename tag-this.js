@@ -31,6 +31,11 @@ function TagThisController( $scope, $location, $http ) {
       class  : "superuser",
       domain : "superuser.com"
     },
+    askubuntu     : {
+      site   : "askubuntu",
+      class  : "askubuntu",
+      domain : "askubuntu.com"
+    },
     meta          : {
       stackoverflow : {
         site   : "meta.stackoverflow",
@@ -46,6 +51,11 @@ function TagThisController( $scope, $location, $http ) {
         site   : "meta.superuser",
         class  : "meta superuser",
         domain : "meta.superuser.com"
+      },
+      askubuntu     : {
+        site   : "meta.askubuntu",
+        class  : "meta askubuntu",
+        domain : "meta.askubuntu.com"
       }
     }
   };
@@ -122,29 +132,9 @@ var abstractTag = {
   },
   replace  : true
 };
-appModule.directive( "chatTag", ["tags", function( tags ) {
-  var chatTag = angular.copy( abstractTag );
-  chatTag.template = '<span class="tag-container" title="{{count}}">' +
-                     '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
-                     '  <a class="tag chat-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
-                     '</span>';
-
-  chatTag.link = function postLink( scope, element, attributes ) {
-    scope.$watch( "tag", function( newTag ) {
-      scope.count = "invalid tag";
-      if( !newTag ) return;
-      scope.count = "loading question count…";
-      tags.getCount( scope.ngModel.site, newTag )
-        .then( function( count ) {
-                 scope.count = count + " questions with this tag";
-               } );
-    } )
-  };
-  return chatTag;
-}] );
 appModule.directive( "siteTag", ["tags", function( tags ) {
   var siteTag = angular.copy( abstractTag );
-  siteTag.template = '<span class="tag-container" title="{{count}}">' +
+  siteTag.template = '<span class="tag-container site-tag {{ngModel.class}}" title="{{count}}">' +
                      '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
                      '  <a class="tag site-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}">{{tag}}</a>' +
                      '</span>';
@@ -161,4 +151,24 @@ appModule.directive( "siteTag", ["tags", function( tags ) {
     } )
   };
   return siteTag;
+}] );
+appModule.directive( "chatTag", ["tags", function( tags ) {
+  var chatTag = angular.copy( abstractTag );
+  chatTag.template = '<span class="tag-container chat-tag {{ngModel.class}}" title="{{count}}">' +
+                     '  <img class="favicon" ng-src="http://{{ngModel.domain}}/favicon.ico" width="16">' +
+                     '  <a class="tag-link chat-tag {{ngModel.class}}" href="http://{{ngModel.domain}}/tags/{{tag}}"><span class="tag chat-tag {{ngModel.class}}">{{tag}}</span></a>' +
+                     '</span>';
+
+  chatTag.link = function postLink( scope, element, attributes ) {
+    scope.$watch( "tag", function( newTag ) {
+      scope.count = "invalid tag";
+      if( !newTag ) return;
+      scope.count = "loading question count…";
+      tags.getCount( scope.ngModel.site, newTag )
+        .then( function( count ) {
+                 scope.count = count + " questions with this tag";
+               } );
+    } )
+  };
+  return chatTag;
 }] );

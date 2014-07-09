@@ -42,62 +42,14 @@ p {
   text-decoration : none !important;
 }
 
-.chat-tag {
-  color            : #3E6D8E;
-  background-color : #E0EAF1;
-  font-size        : .9em;
-  padding          : 3px 4px;
-  border-width     : 0 1px 1px 0;
-}
-
-.chat-tag:hover {
-  border-width : 1px 0px 0px 1px;
-}
-
-.chat-tag.stackoverflow {
-  color            : #3E6D8E;
-  background-color : #E0EAF1;
-  border-color     : #3E6D8E;
-  border-style     : solid;
-}
-
-.chat-tag.stackoverflow.meta {
-  color            : #566E76;
-  background-color : #F7FDFF;
-  border-color     : #566E76;
-  border-style     : solid;
-}
-
-.chat-tag.serverfault {
-  background-color : #F3F1D9;
-  color            : #444444;
-  border-color     : #444444;
-  border-style     : solid;
-}
-
-.chat-tag.superuser {
-  color            : #1087A4;
-  background-color : #FFFFFF;
-  border-color     : #1087A4;
-  border-style     : solid;
-}
-
-.chat-tag.serverfault.meta,
-.chat-tag.superuser.meta {
-  color            : #000;
-  background-color : #FFF;
-  border-color     : #000;
-  border-style     : solid;
-}
-
-.site-tag {
+.tag.site-tag {
   font-size   : 90%;
   line-height : 1.4;
   display     : inline-block;
 }
 
 /* Stack Overflow */
-.site-tag.stackoverflow {
+.tag.site-tag.stackoverflow {
   color            : #3e6d8e;
   background-color : #e0eaf1;
   border-bottom    : 1px solid #b3cee1;
@@ -105,13 +57,13 @@ p {
   padding          : 3px 4px 3px 4px;
 }
 
-.site-tag.stackoverflow:hover {
+.tag.site-tag.stackoverflow:hover {
   background-color : #c4dae9;
   border-bottom    : 1px solid #c4dae9;
   border-right     : 1px solid #c4dae9;
 }
 
-.site-tag.stackoverflow.meta {
+.tag.site-tag.stackoverflow.meta {
   color            : #6f6f6f;
   background-color : #e7e7e7;
   border-bottom    : 1px solid #d5d5d5;
@@ -119,34 +71,34 @@ p {
   padding          : 3px 4px 3px 4px;
 }
 
-.site-tag.stackoverflow.meta:hover {
+.tag.site-tag.stackoverflow.meta:hover {
   background-color : #d5d5d5;
   border-bottom    : 1px solid #d5d5d5;
   border-right     : 1px solid #d5d5d5;
 }
 
 /* Server Fault */
-.site-tag.serverfault {
+.tag.site-tag.serverfault {
   color            : #444;
   background-color : #f3f1d9;
   border           : 1px solid #c5b849;
   padding          : 3px 4px 3px 4px;
 }
 
-.site-tag.serverfault:hover {
+.tag.site-tag.serverfault:hover {
   color            : #f3f1d9;
   background-color : #444;
   border           : 1px solid #444;
 }
 
-.site-tag.serverfault.meta {
+.tag.site-tag.serverfault.meta {
   color            : #6f6f6f;
   background-color : #e7e7e7;
   border           : 1px solid #d0d0d0;
   padding          : 3px 4px 3px 4px;
 }
 
-.site-tag.serverfault.meta:hover {
+.tag.site-tag.serverfault.meta:hover {
   color            : #e7e7e7;
   background-color : #626262;
   border-bottom    : 1px solid #565656;
@@ -154,7 +106,7 @@ p {
 }
 
 /* Super User */
-.site-tag.superuser {
+.tag.site-tag.superuser {
   color            : #1087a4;
   background-color : #fff;
   border           : 2px solid #14a7c6;
@@ -162,21 +114,128 @@ p {
   border-radius    : 7px;
 }
 
-.site-tag.superuser:hover {
+.tag.site-tag.superuser:hover {
   color            : #f3f1d9;
   background-color : #14a7c6;
   border           : 2px solid #14a7c6;
 }
 
-.site-tag.superuser.meta {
+.tag.site-tag.superuser.meta {
   color         : #6f6f6f;
   border        : 2px solid #8c8c8c;
   padding       : 3px 4px 3px 4px;
   border-radius : 7px;
 }
 
-.site-tag.superuser.meta:hover {
+.tag.site-tag.superuser.meta:hover {
   color            : #e7e7e7;
   background-color : #626262;
   border           : 2px solid #8c8c8c;
+}
+
+@font-face {
+  font-family : 'Ubuntu';
+  font-style  : normal;
+  font-weight : 300;
+  src         : url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-L-webfont.eot?v=9145e9e86348');
+  src         : local('Ubuntu Light'), local('Ubuntu-Light'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-L-webfont.eot?v=9145e9e86348') format('embedded-opentype'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-L-webfont.woff?v=2d49fd0144ac') format('woff'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-L-webfont.ttf?v=7ab7c1f1f736') format('truetype'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-L-webfont.svg?v=bfb637a4ef44') format('svg')
+}
+
+@font-face {
+  font-family : 'UbuntuRegular';
+  src         : url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-R-webfont.eot?v=fc537dbafec5');
+  src         : url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-R-webfont.eot?v=fc537dbafec5') format('embedded-opentype'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-R-webfont.woff?v=319403a560a5') format('woff'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-R-webfont.ttf?v=5b0fc0ab9845') format('truetype'), url('http://cdn.sstatic.net/_fonts/ubuntu/ubuntu-R-webfont.svg?v=5def852407c5') format('svg');
+  font-weight : normal;
+  font-style  : normal
+}
+
+/* Ask Ubuntu */
+.tag.site-tag.askubuntu {
+  font-family         : 'UbuntuRegular', Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
+
+  color               : #5e5e5e;
+  background-image    : url("http://cdn.sstatic.net/askubuntu/img/sprites-extra.png?v=4fcfbba54cad");
+  background-position : 0 -8px;
+  overflow            : hidden;
+  background-color    : transparent;
+
+  height              : 19px; /* Original is 14px, but looks weird here */
+  font-size           : 11px;
+  vertical-align      : middle;
+  display             : inline-block;
+
+  padding             : 3px 5px 2px 19px;
+  white-space         : nowrap;
+
+  margin              : 2px 2px 6px 0;
+  line-height         : 12px;
+}
+
+.tag.site-tag.askubuntu:hover {
+  color : #dd4814;
+}
+
+.tag.chat-tag {
+  color            : #3E6D8E;
+  background-color : #E0EAF1;
+  font-size        : .9em;
+  padding          : 3px 4px;
+  border-width     : 0 1px 1px 0;
+}
+
+.tag.chat-tag:hover {
+  border-width : 1px 0px 0px 1px;
+}
+
+.tag.chat-tag.stackoverflow {
+  color            : #3E6D8E;
+  background-color : #E0EAF1;
+  border-color     : #3E6D8E;
+  border-style     : solid;
+}
+
+.tag.chat-tag.stackoverflow.meta {
+  color            : #566E76;
+  background-color : #F7FDFF;
+  border-color     : #566E76;
+  border-style     : solid;
+}
+
+.tag.chat-tag.serverfault {
+  background-color : #F3F1D9;
+  color            : #444444;
+  border-color     : #444444;
+  border-style     : solid;
+}
+
+.tag.chat-tag.superuser {
+  color            : #1087A4;
+  background-color : #FFFFFF;
+  border-color     : #1087A4;
+  border-style     : solid;
+}
+
+.tag.chat-tag.serverfault.meta,
+.tag.chat-tag.superuser.meta {
+  color            : #000;
+  background-color : #FFF;
+  border-color     : #000;
+  border-style     : solid;
+}
+
+.tag.chat-tag.askubuntu,
+.tag.chat-tag.askubuntu.meta {
+  background-color : #E8E7E5;
+  color            : #5E5E5E;
+  border-color     : #5E5E5E;
+  border-style     : solid;
+}
+
+.tag-link.chat-tag.askubuntu {
+  color           : #dd4814;
+  text-decoration : none;
+}
+
+.tag-link.chat-tag.askubuntu:hover {
+  text-decoration : underline;
 }
